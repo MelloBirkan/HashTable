@@ -65,7 +65,6 @@ int main()
 	PrintInsert(&hashTable, 50720, "MODELAGEM MATEMATICA I");
 	PrintInsert(&hashTable, 50782, "ORGANIZACAO DE COMPUTADORES");
 	PrintInsert(&hashTable, 50898, "PROJETO E ANALISE DE ALGORITMOS I");
-	PrintInsert(&hashTable, 50013, "ALGORITMOS NUMERICOS");
 	PrintInsert(&hashTable, 50329, "ESTRUTURA DE DADOS II");
 	PrintInsert(&hashTable, 50721, "MODELAGEM MATEMATICA II");
 	PrintInsert(&hashTable, 50897, "PROJETO DE SOFTWARE");
@@ -78,9 +77,8 @@ int main()
 	PrintInsert(&hashTable, key, "ESTRUTURA DE DADOS II");
 	PrintInsert(&hashTable, key, "Estrutura de Dados II");
 
-	//std::cout << hashTable.ToString();
-  std::string primeiraExtracao = ExtrairTexto(hashTable, 50078);
+	std::cout << hashTable.ToString();
 
-  std::cout << "\nExercicios da Aula\n1:\n";
-  std::cout << primeiraExtracao << std::endl;
+
+
 }

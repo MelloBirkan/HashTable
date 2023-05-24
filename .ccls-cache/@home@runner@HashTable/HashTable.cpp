@@ -1,5 +1,7 @@
 #include "HashTable.h"
+#include <cmath>
 #include <sstream>
+#include <string>
 
 HashTable::HashTable() : HashTable(DEFAULT_SIZE) {}
 
@@ -72,5 +74,29 @@ std::string HashTable::ToString() const {
   return oss.str();
 }
 
+int HashTable::HashFunction(int key) const {
+  // Converter a chave de entrada para uma string
+  std::string str_chave = std::to_string(key);
 
-int HashTable::HashFunction(int key) const { return key % m_Size; }
+  // Verificar se temos ao menos 5 dígitos
+  if (str_chave.length() < 5) {
+    return -1; // retorna -1 se a chave for inválida
+  }
+
+  // Manter apenas o 1º, 3º e 5º dígitos
+  std::string str_resultado = "";
+  str_resultado += str_chave[0]; // Adiciona o 1º dígito ao resultado
+  str_resultado += str_chave[2]; // Adiciona o 3º dígito ao resultado
+  str_resultado += str_chave[4]; // Adiciona o 5º dígito ao resultado
+
+  // Converter a string resultante de volta para um inteiro
+  int resultado = std::stoi(str_resultado);
+
+  // Aplicar o método quadrático ao resultado
+  resultado = std::pow(resultado, 2);
+
+  // Realizar a divisão inteira do resultado por 11
+  resultado = resultado % 11;
+
+  return resultado;
+}
