@@ -57,14 +57,16 @@ int main()
 
 	std::cout << "*** HASH TABLE (SEPARATE CHAINING) ***\n";
 
-	HashTable hashTable(8);
+	HashTable hashTable(10);
 	PrintIsEmpty(&hashTable);
 
-	PrintInsert(&hashTable, 50078, "BANCO DE DADOS");
+  PrintInsert(&hashTable, 50078, "BANCO DE DADOS");
 	PrintInsert(&hashTable, 50327, "ESTRUTURA DE DADOS I");
 	PrintInsert(&hashTable, 50720, "MODELAGEM MATEMATICA I");
 	PrintInsert(&hashTable, 50782, "ORGANIZACAO DE COMPUTADORES");
 	PrintInsert(&hashTable, 50898, "PROJETO E ANALISE DE ALGORITMOS I");
+
+	PrintInsert(&hashTable, 50013, "ALGORITMOS NUMERICOS");
 	PrintInsert(&hashTable, 50329, "ESTRUTURA DE DADOS II");
 	PrintInsert(&hashTable, 50721, "MODELAGEM MATEMATICA II");
 	PrintInsert(&hashTable, 50897, "PROJETO DE SOFTWARE");
@@ -73,7 +75,7 @@ int main()
 	int key = 50329;
 	PrintSearch(&hashTable, key);
 	PrintRemove(&hashTable, key);
-	PrintSearch(&hashTable, key);
+	PrintSearch(&hashTable, key);1
 	PrintInsert(&hashTable, key, "ESTRUTURA DE DADOS II");
 	PrintInsert(&hashTable, key, "Estrutura de Dados II");
 
